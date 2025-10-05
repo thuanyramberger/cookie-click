@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <base href="/cookie-click/" />
+
     <title>Cookie Time</title>
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/cookie.css" />
@@ -29,6 +29,23 @@
       href="https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap"
       rel="stylesheet"
     />
+
+    <script>
+      (function () {
+        var base = document.createElement("base");
+
+        var GH_HOST = "thuanyramberger.github.io";
+        var REPO = "/cookie-click/";
+
+        if (location.hostname === GH_HOST) {
+          base.href = REPO;
+        } else {
+          base.href = "/";
+        }
+
+        document.head.insertBefore(base, document.head.firstChild);
+      })();
+    </script>
   </head>
 
   <body>
@@ -37,9 +54,9 @@
 
     <div class="cookie-wrapper">
       <button id="cookie">
-        <img id="chocolateChip" src="/img/chocolatechip.png" alt="cookie" />
+        <img id="chocolateChip" src="img/chocolatechip.png" alt="cookie" />
       </button>
-      <img id="milk" src="/img/milk.png" alt="milk" />
+      <img id="milk" src="img/milk.png" alt="milk" />
     </div>
 
     <p id="score">0</p>
